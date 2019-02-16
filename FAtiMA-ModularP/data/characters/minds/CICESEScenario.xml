@@ -1,0 +1,33 @@
+<Scenarios>
+	<Scenario name="CICESEScenario">
+		<WorldSimulator port="46874" scenery="Oficina" actionsFile="data/characters/minds/CICESEActions.xml"
+						agentLanguageFile="data/characters/minds/language/agent/en/language-set-1"
+						userLanguageFile="data/characters/minds/language/user/en/language-set-1"
+						userOptionsFile="CICESEUserActions"
+						simplifiedVersion="True">		
+			<Objects>
+				<Object name="Usuario"/>
+			</Objects>
+		</WorldSimulator>	
+		
+		<Agent name="Pedro" displayName="Pedro" role="CompaneroOficina" platform="worldsim" host="localhost" 
+			   port="46874" displayMode="True" sex="M" actionsFile="CICESEActions" 
+			   goalsFile="CICESEGoalLibrary" cultureName="SimpleCulture" relationsName="CICESEPedroRelations">
+			<Properties>				
+				<Property name="location" value="Oficina"/>
+				<Property name="time" value="Morning"/>
+				<Property name="isPerson" value="True"/>
+			</Properties>	
+		</Agent>
+
+		<Agent name="Maria" displayName="Maria" role="CompaneraOficina" platform="worldsim" host="localhost" 
+			   port="46874" displayMode="True" sex="F" actionsFile="CICESEActions" 
+			   goalsFile="CICESEGoalLibrary" cultureName="SimpleCulture" relationsName="CICESEMariaRelations">
+			<Properties>				
+				<Property name="location" value="Oficina"/>
+				<Property name="time" value="Morning"/>
+				<Property name="isPerson" value="True"/>
+			</Properties>	
+		</Agent>
+	</Scenario>
+</Scenarios>

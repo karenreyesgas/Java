@@ -1,0 +1,78 @@
+.button {
+    -fx-padding: 5 22 5 22;   
+    -fx-border-width: 2;
+    -fx-background-color: whitesmoke;
+    -fx-display:block;
+    -fx-background-position: center center;
+    -fx-border-radius: 50%;  
+   
+}
+
+.button:pressed {
+    -fx-scale-y: 0.9;
+    -fx-scale-x: 0.9;
+    -fx-padding: 5 22 5 22;   
+    -fx-border-width: 2;
+    -fx-background-color: whitesmoke;
+    -fx-display:block;
+    -fx-background-position: center center;
+    -fx-border-radius: 50%;  
+   
+}
+
+
+
+.button:hover {
+    -fx-background-color: #9966ff;
+    -fx-scale-y: 1.1;
+    -fx-padding: 5 22 5 22;   
+    -fx-border-width: 2;
+    -fx-background-color: whitesmoke;
+    -fx-display:block;
+    -fx-background-position: center center;
+    -fx-border-radius: 50%;  
+   
+}
+
+
+.button-play { 
+   -fx-graphic: url("1play.png");
+   -fx-background-size: 34px, 34px; 
+}
+
+.button-pause { 
+    -fx-graphic: url("2pausa.png");
+    -fx-background-size: 34px, 34px;
+}
+
+.button-movie {
+   -fx-graphic: url("abrir-carpeta.png");
+   -fx-background-size: 34px, 34px;   
+}
+
+.button-stop { 
+   -fx-graphic: url("stop.png");
+   -fx-background-size: 34px, 34px; 
+   
+}
+
+.background{
+    -fx-background-image: url("smoke.jpg");
+    -fx-background-position: left top, center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover, auto;
+}
+
+.background-bar{
+    -fx-background-color: whitesmoke;
+    -fx-border-color: #9933ff;
+    -fx-border-radius: 50%;
+    -fx-display:block;
+    -fx-padding: 5 22 5 22;   
+    -fx-background-position: center center;
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,1;
+    
+    
+    
+}

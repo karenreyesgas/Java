@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" styleClass="background" stylesheets="@Estilo.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="reproductorvídeo.FXMLDocumentController">
+   <children>
+      <Slider fx:id="sliderTime" layoutX="84.0" layoutY="452.0" prefHeight="14.0" prefWidth="719.0" stylesheets="@Estilo.css" />
+      <Slider fx:id="SliderVolumen" layoutX="830.0" layoutY="325.0" orientation="VERTICAL" />
+      <Label layoutX="813.0" layoutY="473.0" text="Volumen" />
+      <MediaView fx:id="pantalla" fitHeight="400.0" fitWidth="700.0" layoutX="86.0" layoutY="50.0" />
+      <ToolBar layoutX="293.0" layoutY="502.0" prefHeight="47.0" prefWidth="347.0" styleClass="background-bar" stylesheets="@Estilo.css">
+         <items>
+            <Button fx:id="btnAbrir" mnemonicParsing="false" onAction="#abrirVideo" styleClass="button-movie" stylesheets="@Estilo.css" />
+            <Button fx:id="btnPlay" mnemonicParsing="false" onAction="#iniciarVideo" styleClass="button-play" stylesheets="@Estilo.css" />
+            <Button fx:id="btnPausar" mnemonicParsing="false" onAction="#pausarVideo" styleClass="button-pause" stylesheets="@Estilo.css" />
+            <Button mnemonicParsing="false" onAction="#detenerVideo" styleClass="button-stop" stylesheets="@Estilo.css" />
+         </items>
+      </ToolBar>
+   </children>
+</AnchorPane>

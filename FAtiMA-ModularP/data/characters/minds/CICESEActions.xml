@@ -1,0 +1,64 @@
+<DomainActions>
+	
+	<Action name="Bienvenida([target])">
+		<PreConditions>
+		</PreConditions>
+		<Effects>	
+			<Effect probability="1.0">
+				<Property name="[AGENT](saludoEfectuado,[target])" operator="=" value="True"/>
+			</Effect>
+		</Effects>
+	</Action>
+	
+	<Action name="Interesarse([target])">
+		<PreConditions>
+			<RecentEvent subject="[target]" action="Responde_Bienvenida" target="SELF"/>
+		</PreConditions>
+		<Effects>	
+			<Effect probability="1.0">
+				<Property name="[AGENT](interesMostrado,[target])" operator="=" value="True"/>
+			</Effect>
+		</Effects>
+	</Action>
+
+	<Action name="DisculpaAceptada([target])">
+		<PreConditions>
+		</PreConditions>
+		<Effects>	
+			<Effect probability="1.0">
+				<Property name="[AGENT](disculpaAceptada,[target])" operator="=" value="True"/>
+			</Effect>
+		</Effects>
+	</Action>
+
+	<Action name="Saludar([target])">
+		<PreConditions>
+		</PreConditions>
+		<Effects>	
+			<Effect probability="1.0">
+				<Property name="[AGENT](saludoRespondido,[target])" operator="=" value="True"/>
+			</Effect>
+		</Effects>
+	</Action>
+
+	<Action name="Felicita([target])">
+		<PreConditions>
+		</PreConditions>
+		<Effects>	
+			<Effect probability="1.0">
+				<Property name="[AGENT](felicitacionDada,[target])" operator="=" value="True"/>
+			</Effect>
+		</Effects>
+	</Action>
+
+	<Action name="ExpresarPreocupacion([target])">
+		<PreConditions>
+		</PreConditions>
+		<Effects>	
+			<Effect probability="1.0">
+				<Property name="[AGENT](preocupacionMostrada,[target])" operator="=" value="True"/>
+			</Effect>
+		</Effects>
+	</Action>
+
+</DomainActions>

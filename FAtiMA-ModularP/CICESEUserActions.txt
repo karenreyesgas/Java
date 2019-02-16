@@ -1,0 +1,8 @@
+Usuario Inicia_Sesion
+Usuario Responde_Bienvenida Pedro
+Usuario Ignora_Bienvenida
+Usuario Ofrece_Disculpa Pedro
+Usuario Minimiza_Logro Maria
+Usuario Felicita Maria
+Maria Saluda Pedro
+Maria Informa_Ascenso

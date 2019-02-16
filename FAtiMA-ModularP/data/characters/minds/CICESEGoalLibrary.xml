@@ -1,0 +1,77 @@
+<GoalLibrary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="./schemas/GoalLibrary.xsd">
+	
+	<!-- Bienvenida -->
+	<ActivePursuitGoal name="SaludoBienvenida([AGENT])">
+		<PreConditions>
+			<RecentEvent subject="[AGENT]" action="Inicia_Sesion"/>
+		</PreConditions>
+		<SucessConditions>
+			<RecentEvent occurred="True" subject="[SELF]" action="Bienvenida" target="[AGENT]"/>
+		</SucessConditions>
+		<FailureConditions>
+		</FailureConditions>
+	</ActivePursuitGoal>
+
+	<!-- MostrarInteres -->
+	<ActivePursuitGoal name="MostrarInteres([AGENT])">
+		<PreConditions>
+			<RecentEvent subject="[AGENT]" action="Responde_Bienvenida"/>
+		</PreConditions>
+		<SucessConditions>
+			<RecentEvent occurred="True" subject="[SELF]" action="Interesarse" target="[AGENT]"/>
+		</SucessConditions>
+		<FailureConditions>
+		</FailureConditions>
+	</ActivePursuitGoal>
+
+	<!-- Disculpas -->
+	<ActivePursuitGoal name="AceptaDisculpas([AGENT])">
+		<PreConditions>
+			<RecentEvent subject="[AGENT]" action="Ofrece_Disculpa" target="[SELF]"/>
+		</PreConditions>
+		<SucessConditions>
+			<RecentEvent occurred="True" subject="[SELF]" action="DisculpaAceptada" target="[AGENT]"/>
+		</SucessConditions>
+		<FailureConditions>
+		</FailureConditions>
+	</ActivePursuitGoal>
+
+	<!-- Saludo -->
+	<ActivePursuitGoal name="RespondeSaludo([AGENT])">
+		<PreConditions>
+			<RecentEvent subject="[AGENT]" action="Saluda"/>
+		</PreConditions>
+		<SucessConditions>
+			<RecentEvent occurred="True" subject="[SELF]" action="Saludar" target="[AGENT]"/>
+		</SucessConditions>
+		<FailureConditions>
+		</FailureConditions>
+	</ActivePursuitGoal>
+
+	<!-- Felicitar -->
+	<ActivePursuitGoal name="Felicita_Logro([AGENT])">
+		<PreConditions>
+			<RecentEvent subject="[AGENT]" action="Informa_Ascenso"/>
+		</PreConditions>
+		<SucessConditions>
+			<RecentEvent occurred="True" subject="[SELF]" action="Felicita" target="[AGENT]"/>
+		</SucessConditions>
+		<FailureConditions>
+		</FailureConditions>
+	</ActivePursuitGoal>
+
+
+	<!-- Mostrar Preocupacion -->
+	<ActivePursuitGoal name="MostrarPreocupacion([AGENT])">
+		<PreConditions>
+			<RecentEvent subject="[AGENT]" action="Informa_Traslado"/>
+		</PreConditions>
+		<SucessConditions>
+			<RecentEvent occurred="True" subject="[SELF]" action="ExpresarPreocupacion" target="[AGENT]"/>
+		</SucessConditions>
+		<FailureConditions>
+		</FailureConditions>
+	</ActivePursuitGoal>
+			
+</GoalLibrary>

@@ -1,0 +1,71 @@
+<Character role="CompaneraOficina">
+	
+	<EmotionalThresholds>
+		<EmotionalThreshold emotion="Joy" threshold="1" decay="5"/>
+		<EmotionalThreshold emotion="Happy_For" threshold="1" decay="7"/>
+		<EmotionalThreshold emotion="Admiration" threshold="1" decay="8"/>
+		
+		<EmotionalThreshold emotion="Distress" threshold="1" decay="8"/>
+		<EmotionalThreshold emotion="Pity" threshold="1" decay="7"/>
+		
+		<EmotionalThreshold emotion="Love" threshold="8" decay="2"/>
+		<EmotionalThreshold emotion="Hate" threshold="5" decay="2"/>
+		<EmotionalThreshold emotion="Hope" threshold="1" decay="2"/>
+		<EmotionalThreshold emotion="Fear" threshold="1" decay="2"/>
+		<EmotionalThreshold emotion="Satisfaction" threshold="1" decay="2"/>
+		<EmotionalThreshold emotion="Relief" threshold="1" decay="2"/>
+		<EmotionalThreshold emotion="Fears-Confirmed" threshold="1" decay="2"/>
+		<EmotionalThreshold emotion="Disappointment" threshold="1" decay="2"/>
+		
+		
+		<EmotionalThreshold emotion="Resentment" threshold="1" decay="2"/>
+		<EmotionalThreshold emotion="Gloating" threshold="1" decay="2"/>
+		<EmotionalThreshold emotion="Pride" threshold="1" decay="2"/>
+		<EmotionalThreshold emotion="Shame" threshold="1" decay="2"/>
+		<EmotionalThreshold emotion="Gratification" threshold="1" decay="2"/>
+		<EmotionalThreshold emotion="Remorse" threshold="1" decay="2"/>
+		<EmotionalThreshold emotion="Reproach" threshold="1" decay="2"/>
+		<EmotionalThreshold emotion="Gratitude" threshold="1" decay="2"/>
+		<EmotionalThreshold emotion="Anger" threshold="1" decay="2"/>						   
+		
+	</EmotionalThresholds>
+
+	<Goals>
+		<Goal name="SaludoBienvenida([AGENT])" importanceOfSuccess="2" importanceOfFailure="2"/>
+	</Goals>
+
+	<EventReactions>
+		<EmotionalReaction desirability="9" praiseworthiness="6">
+			<Event subject="*" action="Felicita" target="SELF"/>
+		</EmotionalReaction>
+
+		<EmotionalReaction desirability="-5" praiseworthiness="-9">
+			<Event subject="*" action="Minimiza_Logro" target="SELF"/>
+		</EmotionalReaction>
+					
+	</EventReactions>
+	
+	<ActionTendencies>
+	
+		<!-- Generic action tendencies -->
+		
+		<ActionTendency action="Sonrojar">
+			<Preconditions>
+			  <RecentEvent occurred="True" subject="[AGENT]" action="Felicita" target="SELF"/>
+			</Preconditions>  
+			<ElicitingEmotion type="JOY" minIntensity="7">
+				<CauseEvent/>
+			</ElicitingEmotion>
+		</ActionTendency>
+
+		<ActionTendency action="Gesto">
+			<Preconditions>
+			  <RecentEvent occurred="True" subject="[AGENT]" action="Minimiza_Logro" target="SELF"/>
+			</Preconditions>  
+			<ElicitingEmotion type="Reproach" minIntensity="6">
+				<CauseEvent/>
+			</ElicitingEmotion>
+		</ActionTendency>
+				
+	</ActionTendencies>
+</Character>

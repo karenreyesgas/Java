@@ -1,0 +1,91 @@
+<Character role="CompaneroOficina">
+	
+	<EmotionalThresholds>
+		<EmotionalThreshold emotion="Joy" threshold="1" decay="5"/>
+		<EmotionalThreshold emotion="Happy_For" threshold="1" decay="5"/>
+		<EmotionalThreshold emotion="Admiration" threshold="1" decay="5"/>
+		<EmotionalThreshold emotion="Distress" threshold="1" decay="5"/>
+		<EmotionalThreshold emotion="Pity" threshold="1" decay="5"/>
+		<EmotionalThreshold emotion="Love" threshold="4" decay="5"/>
+		<EmotionalThreshold emotion="Hate" threshold="8" decay="5"/>
+		<EmotionalThreshold emotion="Hope" threshold="1" decay="5"/>
+		<EmotionalThreshold emotion="Fear" threshold="1" decay="5"/>
+		<EmotionalThreshold emotion="Satisfaction" threshold="1" decay="5"/>
+		<EmotionalThreshold emotion="Relief" threshold="1" decay="5"/>
+		<EmotionalThreshold emotion="Fears-Confirmed" threshold="1" decay="5"/>
+		<EmotionalThreshold emotion="Disappointment" threshold="1" decay="5"/>
+		<EmotionalThreshold emotion="Resentment" threshold="1" decay="5"/>
+		<EmotionalThreshold emotion="Gloating" threshold="1" decay="5"/>
+		<EmotionalThreshold emotion="Pride" threshold="2" decay="5"/>
+		<EmotionalThreshold emotion="Shame" threshold="1" decay="5"/>
+		<EmotionalThreshold emotion="Gratification" threshold="1" decay="5"/>
+		<EmotionalThreshold emotion="Remorse" threshold="1" decay="5"/>
+		<EmotionalThreshold emotion="Reproach" threshold="1" decay="5"/>
+		<EmotionalThreshold emotion="Gratitude" threshold="1" decay="5"/>
+		<EmotionalThreshold emotion="Anger" threshold="1" decay="5"/>						   
+		
+	</EmotionalThresholds>
+
+	<Goals>
+		<Goal name="SaludoBienvenida([AGENT])" importanceOfSuccess="7" importanceOfFailure="2"/>
+		<Goal name="MostrarInteres([AGENT])" importanceOfSuccess="8" importanceOfFailure="3"/>
+		<Goal name="AceptaDisculpas([AGENT])" importanceOfSuccess="2" importanceOfFailure="9"/>
+		<Goal name="RespondeSaludo([AGENT])" importanceOfSuccess="2" importanceOfFailure="2"/>
+		<Goal name="Felicita_Logro([AGENT])" importanceOfSuccess="2" importanceOfFailure="2"/>
+		<Goal name="MostrarPreocupacion([AGENT])" importanceOfSuccess="2" importanceOfFailure="9"/>
+		
+	</Goals>
+
+	<EventReactions>
+		<EmotionalReaction desirability="6" praiseworthiness="4">
+			<Event subject="Usuario" action="Inicia_Sesion"/>
+		</EmotionalReaction>
+
+		<EmotionalReaction desirability="-9" praiseworthiness="-5">
+			<Event subject="*" action="Ignora_Bienvenida"/>
+		</EmotionalReaction>
+
+		<EmotionalReaction desirability="9" praiseworthiness="5">
+			<Event subject="Usuario" action="Ofrece_Disculpa" target="SELF"/>
+		</EmotionalReaction>
+
+		<EmotionalReaction desirability="7" praiseworthiness="9">
+			<Event subject="SELF" action="DisculpaAceptada" target="*"/>
+		</EmotionalReaction>
+
+		<EmotionalReaction desirability="9" praiseworthiness="3">
+			<Event subject="Maria" action="Saluda" target="SELF"/>
+		</EmotionalReaction>
+
+	</EventReactions>
+	
+	<ActionTendencies>
+	
+		<!-- Generic action tendencies -->
+		
+		<ActionTendency action="SudaFrio">
+			<Preconditions>
+			</Preconditions>
+			<ElicitingEmotion type="Love" minIntensity="2">
+				<CauseEvent/>
+			</ElicitingEmotion>
+		</ActionTendency>
+
+		<ActionTendency action="Contrariado">
+			<Preconditions>
+			</Preconditions>
+			<ElicitingEmotion type="Distress" minIntensity="5">
+				<CauseEvent subject="*" action="Ignora_Bienvenida" target="SELF"/>
+			</ElicitingEmotion>
+		</ActionTendency>
+
+		<ActionTendency action="Sonrie">
+			<Preconditions>
+			</Preconditions>
+			<ElicitingEmotion type="Joy" minIntensity="7">
+				<CauseEvent subject="Usuario" action="Ofrece_Disculpa" target="SELF"/>
+			</ElicitingEmotion>
+		</ActionTendency>
+
+	</ActionTendencies>
+</Character>

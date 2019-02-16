@@ -1,0 +1,4 @@
+<InterpersonalRelations>
+	<Relation target="Usuario" like="-8" respect="2"/>
+	<Relation target="Pedro" like="5" respect="4"/>	
+</InterpersonalRelations>
